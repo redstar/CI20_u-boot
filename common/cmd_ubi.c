@@ -302,17 +302,17 @@ int ubi_volume_continue_write(char *volume, void *buf, size_t size)
 }
 
 int ubi_volume_begin_write(char *volume, void *buf, size_t size,
-	size_t full_size)
+	int64_t full_size)
 {
 	int err = 1;
-	int rsvd_bytes = 0;
+	int64_t rsvd_bytes = 0;
 	struct ubi_volume *vol;
 
 	vol = ubi_find_volume(volume);
 	if (vol == NULL)
 		return ENODEV;
 
-	rsvd_bytes = vol->reserved_pebs * (ubi->leb_size - vol->data_pad);
+	rsvd_bytes = (int64_t)vol->reserved_pebs * (ubi->leb_size - vol->data_pad);
 	if (size < 0 || size > rsvd_bytes) {
 		printf("size > volume size! Aborting!\n");
 		return EINVAL;
