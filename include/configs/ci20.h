@@ -214,6 +214,7 @@
 #define CONFIG_CMD_SOURCE	/* "source" command support	*/
 #define CONFIG_CMD_UBI
 #define CONFIG_CMD_UBIFS
+#define CONFIG_CMD_ELF
 
 #define CONFIG_DOS_PARTITION
 
