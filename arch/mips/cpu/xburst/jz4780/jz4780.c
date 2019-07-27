@@ -88,7 +88,7 @@ void board_init_f(ulong dummy)
 	writel(0x100400, GPIO_PXPAT1S(2));
 	writel(0x100400, GPIO_PXPAT0C(2));
 	writel(0x100400, GPIO_PXPENC(2));
-	writel(readl(CPM_CLKGR0) & ~CPM_CLKGR1_UART4, CPM_CLKGR1);
+	writel(readl(CPM_CLKGR1) & ~CPM_CLKGR1_UART4, CPM_CLKGR1);
 
 #ifdef CONFIG_SPL_SERIAL_SUPPORT
 	preloader_console_init();
