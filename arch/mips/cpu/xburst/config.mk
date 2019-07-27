@@ -4,7 +4,7 @@
 # SPDX-License-Identifier:	GPL-2.0+
 #
 
-PLATFORM_CPPFLAGS += -march=mips32
+PLATFORM_CPPFLAGS += -march=mips32r2
 PLATFORM_CPPFLAGS += -mabi=32 -DCONFIG_32BIT
 ifdef CONFIG_SYS_BIG_ENDIAN
 PLATFORM_LDFLAGS  += -m elf32btsmip
