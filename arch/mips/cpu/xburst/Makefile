@@ -9,7 +9,7 @@ include $(TOPDIR)/config.mk
 LIB	= $(obj)lib$(CPU).o
 
 START	= start.o
-SOBJS-y	=
+SOBJS-y	= cache.o
 COBJS-y	= cpu.o
 
 SRCS	:= $(START:.o=.S) $(SOBJS-y:.o=.S) $(COBJS-y:.o=.c)
